@@ -4,7 +4,6 @@ import joblib
 
 # Load model & scaler
 model = joblib.load(open("Kmeans Clustering.joblib", "rb"))
-scaler = joblib.load(open("scaler.joblib", "rb"))
 
 st.title("🌍 Country Development Clustering App")
 
@@ -21,8 +20,9 @@ if st.button("Predict Cluster"):
     data = np.array([[gdp, co2, energy, tourism]])
     
     # Predict cluster
-    cluster = kmeans.predict(data_scaled)
+    cluster = model.predict(data_scaled)
     
     st.success(f"This country belongs to Cluster: {cluster[0]}")
+
 
 
