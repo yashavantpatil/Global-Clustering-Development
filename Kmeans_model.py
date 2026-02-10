@@ -18,11 +18,9 @@ tourism = st.number_input("Tourism")
 if st.button("Predict Cluster"):
     
     data = np.array([[gdp, co2, energy, tourism]])
-    
-    # Predict cluster
-    cluster = model.predict(data_scaled)
-    
+
     st.success(f"This country belongs to Cluster: {cluster[0]}")
+
 
 
 
