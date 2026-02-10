@@ -3,8 +3,8 @@ import numpy as np
 import joblib
 
 # Load model & scaler
-model = pickle.load(open("Kmeans Clustering.joblib", "rb"))
-scaler = pickle.load(open("scaler.joblib", "rb"))
+model = joblib.load(open("Kmeans Clustering.joblib", "rb"))
+scaler = joblib.load(open("scaler.joblib", "rb"))
 
 st.title("🌍 Country Development Clustering App")
 
@@ -27,3 +27,4 @@ if st.button("Predict Cluster"):
     cluster = model.predict(data_scaled)
     
     st.success(f"This country belongs to Cluster: {cluster[0]}")
+
